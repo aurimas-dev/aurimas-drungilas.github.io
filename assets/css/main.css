@@ -4,6 +4,10 @@
     font-family: 'Raleway', sans-serif;
 }
 
+.page {
+    background-color: #f2f2f2;
+}
+
 /* LAYOUT */
 
 .l-navbar {
@@ -45,6 +49,7 @@
 
 .boundaries {
     border: 1px solid black;
+    background-color: white;
 }
 
 /* COMPONENTS */
