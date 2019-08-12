@@ -24,7 +24,32 @@
 .l-navbar__nav-item {
     font-size: 18px;
     text-transform: uppercase;
+    position: relative;
+    border-bottom: 1px solid transparent;
 }
+
+.l-navbar__nav-item:hover {
+    top: 1px;
+}
+
+.l-navbar__nav-item.active {
+    top: 0px;
+    border-bottom: 1px solid #222;
+}
+
+.l-navbar__nav-item.active:hover {
+    top: 0px;
+    border-bottom: 1px solid #777;
+}
+
+.l-navbar__nav-link {
+    color: #222;
+}
+
+.l-navbar__nav-link:hover {
+    color: #777;
+}
+
 
 .l-main {
 
@@ -48,13 +73,102 @@
 }
 
 .boundaries {
-    border: 1px solid black;
-    background-color: white;
+    border: 1px solid #000;
+    background-color: #fff;
 }
 
 /* COMPONENTS */
 
+/* c-site-logo */
+
 .c-site-logo {
     text-transform: uppercase;
     font-size: 18px;
+    color: #222;
+}
+
+.c-site-logo:hover {
+    color: #222;
+}
+
+/* c-card */
+
+.c-card {
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+.c-card:hover {
+    text-decoration: none;
+    background-color: #eee;
+    /* transition: background-color 0.5s ease; */
+    transform: scale(1.015);
+}
+
+.c-card:hover .c-card__image {
+    
+}
+
+.c-card__image {
+    height: 160px;
+    background-size: cover;
+    background-position: center center;
+    overflow: hidden;
+}
+
+.c-card__body {
+    border-bottom: 1px solid #ccc;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.c-card__body-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #222;
+}
+
+.c-card__body-subtitle {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #777;
+    margin-top: auto;
+    padding-bottom: 10px;
+}
+
+/* c-categories */
+
+.c-categories {
+    background-color: #fff;
+}
+
+.c-categories__title {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding: 15px;
+    border-bottom: 1px solid #f2f2f2;
+    color: #222;
+    margin-bottom: 0px;
+}
+
+.c-categories__body {
+    border-bottom: 1px solid #ccc;
+}
+
+.c-categories__body-list {
+    list-style: none;
+    padding: 15px;
+    margin-bottom: 0px;
+    line-height: 2;
+}
+
+.c-categories__item-link {
+    color: #222;
+}
+
+.c-categories__item-link:hover {
+    color: #222;
 }
