@@ -181,3 +181,17 @@
 .c-categories__item-link:hover {
     color: #222;
 }
+
+/* c-social */
+
+.c-social {
+    
+}
+
+.c-social__link:hover {
+    text-decoration: none;
+}
+
+.c-social__img {
+    margin: 10px;
+}
