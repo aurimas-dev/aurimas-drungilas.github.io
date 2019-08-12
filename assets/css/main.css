@@ -72,9 +72,18 @@
     font-size: 36px;
 }
 
-.boundaries {
-    border: 1px solid #000;
+/* b-panel */
+
+.b-panel {
     background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 30px;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.b-panel p {
+
 }
 
 /* COMPONENTS */
