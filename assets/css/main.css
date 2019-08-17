@@ -88,9 +88,9 @@
     font-size: 36px;
 }
 
-/* b-panel */
+/* b-post */
 
-.b-panel {
+.b-post {
     background-color: #fff;
     border-bottom: 1px solid #ccc;
     padding: 30px;
@@ -98,7 +98,22 @@
     font-size: 18px;
 }
 
-.b-panel p {}
+.b-post__body {
+    padding-bottom: 20px;
+}
+
+.b-post__footer {
+    padding-top: 20px;
+    border-top: 1px solid #f2f2f2;
+}
+
+.b-post__footer-published {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #777;
+    padding-bottom: 10px;
+    font-style: italic;
+}
 
 /* b-post-title */
 
