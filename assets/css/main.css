@@ -115,6 +115,16 @@
     font-style: italic;
 }
 
+/* b-page */
+
+.b-page {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    padding: 30px;
+    line-height: 2;
+    font-size: 18px;
+}
+
 /* b-post-title */
 
 .b-post-title {}
