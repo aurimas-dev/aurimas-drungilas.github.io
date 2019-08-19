@@ -39,14 +39,16 @@
     top: 1px;
 }
 
-.l-navbar__nav-item.active {
+.l-navbar__nav-item.active a {
     top: 0px;
     border-bottom: 1px solid #222;
+    display: inline-block;
 }
 
-.l-navbar__nav-item.active:hover {
+.l-navbar__nav-item.active:hover a {
     top: 0px;
     border-bottom: 1px solid #777;
+    display: inline-block;
 }
 
 .l-navbar__nav-link {
