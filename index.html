@@ -4,83 +4,59 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-custom.css">
+    <title>aurimas_dev games</title>
+    <meta name="description" content="I'm a solo indie game dev. Find the list of the latest games I've been working on here.">
+    <link rel="canonical" href="https://aurimas.dev" />
+    <link rel="icon" type="image/png" href="./assets/images/logo.png">
     <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
-
-    <title>aurimas_dev games</title>
-    <meta name="description" content="Find the list of the latest games I've been working on here.">
-    <link rel="icon" type="image/png" href="./assets/images/logo.png">
-    <link rel="canonical" href="https://aurimas.dev" />
   </head>
   <body class="page">
 
     <!-- Navigation -->
-    <nav class="container navbar navbar-expand-lg l-navbar">
-        <a class="navbar-brand c-logo" style="margin: 0 auto; text-transform: lowercase; color: white;" href="/"><img src="./assets/images/logo.png" alt="aurimas_dev" style="height: 40px;"> aurimas_dev</a>
+    <nav class="site-container l-navbar">
+        <a class="c-logo" href="/"><img class="c-logo__img" src="./assets/images/logo.png" alt="aurimas_dev"> aurimas_dev</a>
     </nav>
 
     <!-- Main content -->
-    <main class="container l-main">
+    <main class="site-container l-main">
         
-        <div class="row" style="margin-bottom: 15px; margin-top: 15px;">
-            <div class="col text-center">
-                <a style="display: inline-block" href="https://www.instagram.com/aurimas_dev/" target="_blank" ><img style="width: 48px; height: 48px; margin: 12px;" src="./assets/images/instagram.png" alt="follow on instagram"></a>
-                <a style="display: inline-block" href="https://www.youtube.com/@aurimas_dev" target="_blank" ><img style="width: 48px; height: 48px; margin: 12px;" src="./assets/images/youtube.png" alt="follow on youtube"></a>
-                <a style="display: inline-block" href="https://store.steampowered.com/developer/aurimas" target="_blank" ><img style="width: 48px; height: 48px; margin: 12px;" src="./assets/images/steam.png" alt="follow on steam"></a>
-                <a style="display: inline-block" href="https://tiktok.com/@aurimas_dev" target="_blank" ><img style="width: 48px; height: 48px; margin: 12px;" src="./assets/images/tiktok.png" alt="follow on tiktok"></a>
-                <a style="display: inline-block" href="https://x.com/aurimas_dev" target="_blank" ><img style="width: 48px; height: 48px; margin: 12px;" src="./assets/images/twitter.png" alt="follow on twitter"></a>
-            </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/aurimas_dev/" target="_blank"><img src="./assets/images/instagram.png" alt="follow on instagram"></a>
+            <a href="https://www.youtube.com/@aurimas_dev" target="_blank"><img src="./assets/images/youtube.png" alt="follow on youtube"></a>
+            <a href="https://store.steampowered.com/developer/aurimas" target="_blank"><img src="./assets/images/steam.png" alt="follow on steam"></a>
+            <a href="https://tiktok.com/@aurimas_dev" target="_blank"><img src="./assets/images/tiktok.png" alt="follow on tiktok"></a>
+            <a href="https://x.com/aurimas_dev" target="_blank"><img src="./assets/images/twitter.png" alt="follow on twitter"></a>
         </div>
         
-        <div class="row b-title">
-            <div class="col">
-                <p style="text-align: center; margin-top: 10px; margin-bottom: 30px;">Hi, I'm Aurimas. I'm a solo indie game dev. Here are my games:</p>
-            </div>
+        <div class="b-title">
+            <p class="b-title__text">Hi, I'm Aurimas. I'm a solo indie game dev. Here are my games.</p>
         </div>
 
-        <div class="row">
-            <div class="col">
-                <iframe src="https://store.steampowered.com/widget/2454830/" height="190" width="100%" frameborder="0"></iframe>
-            </div>
+        <div class="game-row">
+            <iframe src="https://store.steampowered.com/widget/2454830/" height="190" width="100%" frameborder="0"></iframe>
         </div>
 
-        <div class="row">
-            <div class="col-lg-6">
+        <div class="game-row game-row--half">
+            <div class="game-col">
                 <iframe src="https://store.steampowered.com/widget/2262560/" height="190" width="100%" frameborder="0"></iframe>
             </div>
-            <div class="col-lg-6">
+            <div class="game-col">
                 <iframe src="https://store.steampowered.com/widget/1358760/" frameborder="0" width="100%" height="190"></iframe>
             </div>
         </div>
-
-        <div class="row">
-        </div>
     </main>
 
-    
-
     <!-- Footer -->
-    <footer class="container l-footer">
-        <div class="row">
-            <div class="col text-center">
-                &copy; 2026 All rights reserved.
-            </div>
+    <footer class="site-container l-footer">
+        <div class="l-footer__text">
+            &copy; 2026 All rights reserved.
         </div>
     </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </body>
 </html>

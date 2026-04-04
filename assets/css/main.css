@@ -2,6 +2,10 @@
  * GLOBAL
  */
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 * {
     font-family: "Noto Sans Mono", monospace;
     font-optical-sizing: auto;
@@ -9,11 +13,27 @@
     font-variation-settings:
         "wdth" 100;
     color: white;
+    margin: 0;
+    padding: 0;
 }
 
-.page,
-.post {
+body {
+    line-height: 1.5;
+}
+
+.page {
     background-color: #0f0f0f;
+}
+
+/* Site container — replaces Bootstrap .container */
+
+.site-container {
+    width: 100%;
+    max-width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /**
@@ -21,70 +41,82 @@
  * Includes the major layout elements of the site.
  */
 
-/* l-navar: site navigation */
+/* l-navbar: site navigation */
 
 .l-navbar {
     border-bottom: 1px solid #222;
     padding-top: 15px;
     padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.l-navbar__navbar-nav {
-    margin-left: auto;
+.c-logo {
+    text-decoration: none;
+    color: white;
+    text-transform: lowercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.l-navbar__nav-item {
-    font-size: 18px;
-    text-transform: uppercase;
-    position: relative;
-    border-bottom: 1px solid transparent;
+.c-logo__img {
+    height: 40px;
 }
-
-.l-navbar__nav-item:hover {
-    top: 1px;
-}
-
-.l-navbar__nav-item.active a {
-    top: 0px;
-    border-bottom: 1px solid #222;
-    display: inline-block;
-}
-
-.l-navbar__nav-item.active:hover a {
-    top: 0px;
-    border-bottom: 1px solid #777;
-    display: inline-block;
-}
-
-.l-navbar__nav-link {
-    color: #222;
-}
-
-.l-navbar__nav-link:hover {
-    color: #777;
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,0,0, 1)' stroke-width='1' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.navbar-toggler:focus {
-  outline: 0px;
-}
-
-/* l-main: site main content */
-
-.l-main {}
 
 /* social links */
 
-.l-main a img {
+.social-links {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+}
+
+.social-links img {
+    width: 48px;
+    height: 48px;
+    margin: 12px;
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.l-main a:hover img {
+.social-links a:hover img {
     transform: scale(1.15);
     opacity: 0.8;
+}
+
+/* game rows */
+
+.game-row {
+    margin-bottom: 15px;
+}
+
+.game-row--half {
+    display: flex;
+    gap: 15px;
+}
+
+.game-col {
+    flex: 1;
+    min-width: 0;
+}
+
+@media (max-width: 991px) {
+    .game-row--half {
+        flex-direction: column;
+    }
+}
+
+/* b-title */
+
+.b-title__text {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
 }
 
 /* l-footer: site footer */
@@ -96,192 +128,21 @@
     padding-bottom: 30px;
 }
 
-/**
- * BLOCKS
- * Includes bigger elements throughout the site.
- * Usually nested within a layout element.
- */
-
-/* b-title */
-
-.b-title {}
-
-.b-title__header {
-    text-transform: uppercase;
-    font-weight: 300;
-    margin-top: 60px;
-    margin-bottom: 50px;
-    font-size: 36px;
-}
-
-/* b-post */
-
-.b-post {
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    padding: 30px;
-    line-height: 2;
-    font-size: 18px;
-}
-
-.b-post__body {
-    padding-bottom: 20px;
-}
-
-.b-post__footer {
-    padding-top: 20px;
-    border-top: 1px solid #f2f2f2;
-}
-
-.b-post__footer-published {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #777;
-    padding-bottom: 10px;
-}
-
-/* b-page */
-
-.b-page {
-    background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    padding: 30px;
-    line-height: 2;
-    font-size: 18px;
-}
-
-/* b-post-title */
-
-.b-post-title {}
-
-.b-post-title__col {
-    min-height: 250px;
-    background-size: cover;
-    background-position: center center;
-    border-bottom: 1px solid #222;
-    display: flex;
-    align-content: center;
-}
-
-.b-post-title__inner {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.b-post-title__header {
-    color: #222;
-    font-size: 36px;
-    font-weight: 300;
-    display: inline;
-    background-color: rgba(255, 255, 255, 0.75);
-    line-height: 1.3;
-}
-
-/* b-card */
-
-.b-card {
-    margin-bottom: 15px;
-    background-color: #fff;
-}
-
-.b-card:hover {
-    text-decoration: none;
-    background-color: #eee;
-    /* transition: background-color 0.5s ease; */
-    transform: scale(1.015);
-}
-
-.b-card:hover .b-card__image {
-    transform: scale(1.015);
-}
-
-.b-card__image {
-    height: 160px;
-    background-size: cover;
-    background-position: center center;
-    overflow: hidden;
-}
-
-.b-card__body {
-    border-bottom: 1px solid #ccc;
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.b-card__body-title {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.5;
-    color: #222;
-}
-
-.b-card__body-subtitle {
-    font-size: 14px;
-    text-transform: uppercase;
-    color: #777;
-    margin-top: auto;
-    padding-bottom: 10px;
-}
-
-/* b-categories */
-
-.b-categories {
-    background-color: #fff;
-}
-
-.b-categories__title {
-    font-size: 18px;
-    font-weight: 400;
-    text-transform: uppercase;
-    padding: 15px;
-    border-bottom: 1px solid #f2f2f2;
-    color: #222;
-    margin-bottom: 0px;
-}
-
-.b-categories__body {
-    border-bottom: 1px solid #ccc;
-}
-
-.b-categories__body-list {
-    list-style: none;
-    padding: 15px;
-    margin-bottom: 0px;
-    line-height: 2;
-}
-
-.b-categories__item-link,
-.b-categories__item-link:hover {
-    color: #222;
+.l-footer__text {
+    text-align: center;
 }
 
 /**
  * COMPONENTS
- * Includes smaller elements throughout the site.
- * Usually nested within a block.
  */
 
 /* c-logo */
 
 .c-logo {
-    text-transform: uppercase;
     font-size: 18px;
-    color: #222;
+    transition: transform 0.2s ease;
 }
 
 .c-logo:hover {
-    color: #222;
-}
-
-/* c-social */
-
-.c-social {}
-
-.c-social__link:hover {
-    text-decoration: none;
-}
-
-.c-social__img {
-    margin: 10px;
+    transform: scale(1.2);
 }
