@@ -23,6 +23,11 @@ body {
 
 .page {
     background-color: #0f0f0f;
+    background-image: url('../images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* Site container — replaces Bootstrap .container */
