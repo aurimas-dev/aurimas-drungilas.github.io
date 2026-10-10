@@ -1,62 +1,240 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>aurimas_dev games</title>
-    <meta name="description" content="I'm a solo indie game dev. Find the list of the latest games I've been working on here.">
-    <link rel="canonical" href="https://aurimas.dev" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Games made by Aurimas, a solo indie game developer.">
+    <link rel="canonical" href="https://aurimas.dev/">
     <link rel="icon" type="image/png" href="./assets/images/logo.png">
-    <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <title>aurimas_dev games</title>
   </head>
-  <body class="page">
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="aurimas_dev home">
+        <img class="brand__mark" src="./assets/images/logo.png" alt="">
+        <span class="brand__name">aurimas_dev</span>
+        <span class="brand__tagline">INDIE GAMES</span>
+      </a>
 
-    <!-- Navigation -->
-    <nav class="site-container l-navbar">
-        <a class="c-logo" href="/"><img class="c-logo__img" src="./assets/images/logo.png" alt="aurimas_dev"> aurimas_dev</a>
-    </nav>
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <a class="primary-nav__link primary-nav__link--active" href="#games">Games</a>
+        <a class="primary-nav__link" href="#about">About</a>
+        <a class="primary-nav__link" href="#follow">Follow</a>
+      </nav>
 
-    <!-- Main content -->
-    <main class="site-container l-main">
-        
-        <div class="social-links">
-            <a href="https://www.instagram.com/aurimas_dev/" target="_blank"><img src="./assets/images/instagram.png" alt="follow on instagram"></a>
-            <a href="https://www.youtube.com/@aurimas_dev" target="_blank"><img src="./assets/images/youtube.png" alt="follow on youtube"></a>
-            <a href="https://tiktok.com/@aurimas_dev" target="_blank"><img src="./assets/images/tiktok.png" alt="follow on tiktok"></a>
-            <a href="https://x.com/aurimas_dev" target="_blank"><img src="./assets/images/twitter.png" alt="follow on twitter"></a>
-            <a href="https://store.steampowered.com/developer/aurimas" target="_blank"><img src="./assets/images/steam.png" alt="follow on steam"></a>
-        </div>
-        
-        <div class="b-title">
-            <p class="b-title__text">Hi, I'm Aurimas. I'm a solo indie game dev. Here are my games.</p>
-        </div>
+      <nav class="social-nav" aria-label="Social links">
+        <a href="https://www.instagram.com/aurimas_dev/" target="_blank" rel="noreferrer" aria-label="Instagram">
+          <img src="./assets/images/instagram.png" alt="">
+        </a>
+        <a href="https://www.youtube.com/@aurimas_dev" target="_blank" rel="noreferrer" aria-label="YouTube">
+          <img src="./assets/images/youtube.png" alt="">
+        </a>
+        <a href="https://tiktok.com/@aurimas_dev" target="_blank" rel="noreferrer" aria-label="TikTok">
+          <img src="./assets/images/tiktok.png" alt="">
+        </a>
+        <a href="https://x.com/aurimas_dev" target="_blank" rel="noreferrer" aria-label="X">
+          <img src="./assets/images/twitter.png" alt="">
+        </a>
+        <a href="https://store.steampowered.com/developer/aurimas" target="_blank" rel="noreferrer" aria-label="Steam">
+          <img src="./assets/images/steam.png" alt="">
+        </a>
+      </nav>
+    </header>
 
-        <div class="game-row">
-            <iframe src="https://store.steampowered.com/widget/2454830/" height="190" width="100%" frameborder="0"></iframe>
-        </div>
+    <main>
+      <section class="game-showcase" id="featured" aria-label="Featured game">
+        <div class="game-showcase__backdrop" aria-hidden="true"></div>
+        <div class="game-showcase__shade" aria-hidden="true"></div>
 
-        <div class="game-row game-row--half">
-            <div class="game-col">
-                <iframe src="https://store.steampowered.com/widget/2262560/" height="190" width="100%" frameborder="0"></iframe>
+        <article class="featured-game">
+          <div class="featured-game__content">
+            <p class="featured-game__eyebrow">Featured game</p>
+            <h1 class="featured-game__title">Purgatory Survivors</h1>
+            <p class="featured-game__description">
+              Purgatory Survivors is a top-down shooter with roguelike elements. Plunge into a dark fantasy world infested with demons and despair, all fighting for you to fail.
+            </p>
+            <div class="featured-game__actions">
+              <a class="button button--primary" href="https://store.steampowered.com/app/2454830/" target="_blank" rel="noreferrer">
+                View on Steam <span aria-hidden="true">&#8599;</span>
+              </a>
             </div>
-            <div class="game-col">
-                <iframe src="https://store.steampowered.com/widget/1358760/" frameborder="0" width="100%" height="190"></iframe>
+          </div>
+          <iframe
+            id="featured-video"
+            class="featured-game__video"
+            data-video-id="ErkBSsQVdVQ"
+            title="Purgatory Survivors gameplay"
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="origin"
+            tabindex="-1"
+          ></iframe>
+        </article>
+      </section>
+
+      <section class="games-section" id="games" aria-labelledby="games-title">
+        <header class="games-section__header">
+          <h2 id="games-title"> My Games</h2>
+        </header>
+
+        <div class="games-grid">
+          <article class="game-card">
+            <div class="game-card__art">
+              <img
+                src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2454830/97b1f6bf9b4b0c73568ab068cf0e6f251da318c6/header.jpg?t=1775376302"
+                alt=""
+                loading="lazy"
+              >
+              <span class="game-card__status game-card__status--released">Released</span>
             </div>
+            <div class="game-card__content">
+              <h3>Purgatory Survivors</h3>
+              <p>A top-down shooter with roguelike elements, set in a dark fantasy world.</p>
+              <ul class="game-card__tags" aria-label="Game tags">
+                <li>Bullet Hell</li>
+                <li>Roguelike</li>
+                <li>Top-Down Shooter</li>
+              </ul>
+              <a class="game-card__link" href="https://store.steampowered.com/app/2454830/" target="_blank" rel="noreferrer">
+                View on Steam <span aria-hidden="true">&#8594;</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-card__art">
+              <img
+                src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1358760/header.jpg?t=1771794227"
+                alt=""
+                loading="lazy"
+              >
+              <span class="game-card__status game-card__status--released">Released</span>
+            </div>
+            <div class="game-card__content">
+              <h3>Portability</h3>
+              <p>A 2D physics game where you solve puzzles by teleporting objects.</p>
+              <ul class="game-card__tags" aria-label="Game tags">
+                <li>Puzzle</li>
+                <li>Physics</li>
+                <li>2D</li>
+              </ul>
+              <a class="game-card__link" href="https://store.steampowered.com/app/1358760/" target="_blank" rel="noreferrer">
+                View on Steam <span aria-hidden="true">&#8594;</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-card__art">
+              <img
+                src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2262560/header.jpg?t=1789678546"
+                alt=""
+                loading="lazy"
+              >
+              <span class="game-card__status game-card__status--development">In Development</span>
+            </div>
+            <div class="game-card__content">
+              <h3>Rogue Cube Defense</h3>
+              <p>A roguelite tower defense game with a procedurally generated path.</p>
+              <ul class="game-card__tags" aria-label="Game tags">
+                <li>Roguelike Deckbuilder</li>
+                <li>Tower Defense</li>
+              </ul>
+              <a class="game-card__link" href="https://store.steampowered.com/app/2262560/" target="_blank" rel="noreferrer">
+                Follow on Steam <span aria-hidden="true">&#8594;</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="game-card">
+            <div class="game-card__art game-card__art--eggs" aria-hidden="true">
+              <span>Tidy Up<br>Me Eggs!</span>
+              <span class="game-card__status game-card__status--development">In Development</span>
+            </div>
+            <div class="game-card__content">
+              <h3>Tidy Up Me Eggs!</h3>
+              <p>More details coming soon.</p>
+              <ul class="game-card__tags" aria-label="Game tags">
+                <li>Organizing</li>
+                <li>Collectathon</li>
+                <li>Cozy</li>
+              </ul>
+              <span class="game-card__link game-card__link--disabled">More details soon</span>
+            </div>
+          </article>
         </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="about-section__content">
+          <p class="about-section__eyebrow">The developer</p>
+          <h2>Hi, I'm Aurimas.</h2>
+          <p>I’m a solo indie game developer who loves creating cosy, quirky, and curious games for you to get lost in. I intentionally don't take any publishers or external funding, keeping my creative freedom and vision intact. If you like what you see and what to support my work, consider following me on social media or just buying my games. Hope you have fun!</p>
+        </div>
+      </section>
+
+      <section class="follow-section" id="follow" aria-labelledby="follow-title">
+        <div class="follow-section__content">
+          <h2 id="follow-title">Follow the Journey</h2>
+          <p>Find me on social media for game updates, videos, and more.</p>
+          <nav class="follow-links" aria-label="Follow Aurimas">
+            <a class="follow-link follow-link--steam" href="https://store.steampowered.com/developer/aurimas" target="_blank" rel="noreferrer">
+              <img src="./assets/images/steam.png" alt="">
+              <span>Steam</span>
+            </a>
+            <a class="follow-link follow-link--youtube" href="https://www.youtube.com/@aurimas_dev" target="_blank" rel="noreferrer">
+              <img src="./assets/images/youtube.png" alt="">
+              <span>YouTube</span>
+            </a>
+            <a class="follow-link follow-link--x" href="https://x.com/aurimas_dev" target="_blank" rel="noreferrer">
+              <img src="./assets/images/twitter.png" alt="">
+              <span>X (Twitter)</span>
+            </a>
+            <a class="follow-link follow-link--tiktok" href="https://tiktok.com/@aurimas_dev" target="_blank" rel="noreferrer">
+              <img src="./assets/images/tiktok.png" alt="">
+              <span>TikTok</span>
+            </a>
+            <a class="follow-link follow-link--instagram" href="https://www.instagram.com/aurimas_dev/" target="_blank" rel="noreferrer">
+              <img src="./assets/images/instagram.png" alt="">
+              <span>Instagram</span>
+            </a>
+          </nav>
+        </div>
+      </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-container l-footer">
-        <div class="l-footer__text">
-            &copy; 2026 All rights reserved.
-        </div>
+    <footer class="site-footer">
+      <p>&copy; <span id="year"></span> aurimas_dev</p>
     </footer>
 
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      const featuredVideo = document.getElementById("featured-video");
+      const videoParameters = new URLSearchParams({
+        autoplay: "1",
+        mute: "1",
+        loop: "1",
+        playlist: featuredVideo.dataset.videoId,
+        controls: "0",
+        playsinline: "1",
+        rel: "0",
+        enablejsapi: "1",
+        origin: window.location.origin
+      });
+
+      function controlFeaturedVideo(command) {
+        featuredVideo.contentWindow.postMessage(
+          JSON.stringify({ event: "command", func: command, args: [] }),
+          "https://www.youtube.com"
+        );
+      }
+
+      featuredVideo.addEventListener("load", () => {
+        controlFeaturedVideo("mute");
+        window.setTimeout(() => controlFeaturedVideo("playVideo"), 250);
+      });
+
+      featuredVideo.src = `https://www.youtube.com/embed/${featuredVideo.dataset.videoId}?${videoParameters}`;
+    </script>
   </body>
 </html>
