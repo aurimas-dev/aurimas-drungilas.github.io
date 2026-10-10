@@ -69,20 +69,7 @@
               allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
               allowfullscreen
               referrerpolicy="origin"
-              tabindex="-1"
             ></iframe>
-            <div class="video-player__shield" id="video-shield"></div>
-            <div class="video-player__controls" id="video-controls">
-              <button type="button" class="video-player__button" id="video-play" aria-label="Pause">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path class="icon-pause" d="M6 5h4v14H6zM14 5h4v14h-4z"/><path class="icon-play" d="M8 5v14l11-7z"/></svg>
-              </button>
-              <button type="button" class="video-player__button" id="video-mute" aria-label="Unmute">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9v6h4l5 4V5L7 9z"/><path class="icon-sound" d="M15.5 8.5a5 5 0 0 1 0 7l-1.4-1.4a3 3 0 0 0 0-4.2zM18 6a8.5 8.5 0 0 1 0 12l-1.4-1.4a6.5 6.5 0 0 0 0-9.2z"/><path class="icon-muted" d="m16 9.4 1.4-1.4 2.1 2.1 2.1-2.1L23 9.4 20.9 11.5 23 13.6l-1.4 1.4-2.1-2.1-2.1 2.1-1.4-1.4 2.1-2.1z"/></svg>
-              </button>
-              <button type="button" class="video-player__button video-player__button--right" id="video-fullscreen" aria-label="Fullscreen">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h5v2H7v3H5zM14 5h5v5h-2V7h-3zM5 14h2v3h3v2H5zM17 14h2v5h-5v-2h3z"/></svg>
-              </button>
-            </div>
           </div>
         </article>
       </section>
@@ -230,87 +217,10 @@
         mute: "1",
         loop: "1",
         playlist: featuredVideo.dataset.videoId,
-        controls: "0",
-        disablekb: "1",
-        fs: "0",
+        controls: "1",
         playsinline: "1",
         rel: "0",
-        enablejsapi: "1",
         origin: window.location.origin
-      });
-
-      function controlFeaturedVideo(command) {
-        featuredVideo.contentWindow.postMessage(
-          JSON.stringify({ event: "command", func: command, args: [] }),
-          "https://www.youtube.com"
-        );
-      }
-
-      const player = document.getElementById("video-player");
-      const playButton = document.getElementById("video-play");
-      const muteButton = document.getElementById("video-mute");
-      const fullscreenButton = document.getElementById("video-fullscreen");
-      let isPlaying = true;
-      let isMuted = true;
-      let hideTimer;
-
-      function showControls() {
-        player.classList.add("is-active");
-        window.clearTimeout(hideTimer);
-        hideTimer = window.setTimeout(() => player.classList.remove("is-active"), 2500);
-      }
-
-      function setPlaying(playing) {
-        isPlaying = playing;
-        player.classList.toggle("is-paused", !playing);
-        playButton.setAttribute("aria-label", playing ? "Pause" : "Play");
-      }
-
-      function togglePlay() {
-        controlFeaturedVideo(isPlaying ? "pauseVideo" : "playVideo");
-        setPlaying(!isPlaying);
-        showControls();
-      }
-
-      playButton.addEventListener("click", togglePlay);
-      document.getElementById("video-shield").addEventListener("click", togglePlay);
-
-      muteButton.addEventListener("click", () => {
-        isMuted = !isMuted;
-        controlFeaturedVideo(isMuted ? "mute" : "unMute");
-        player.classList.toggle("is-unmuted", !isMuted);
-        muteButton.setAttribute("aria-label", isMuted ? "Unmute" : "Mute");
-        showControls();
-      });
-
-      fullscreenButton.addEventListener("click", () => {
-        if (document.fullscreenElement) {
-          document.exitFullscreen();
-        } else {
-          player.requestFullscreen();
-        }
-      });
-
-      player.addEventListener("mousemove", showControls);
-      player.addEventListener("focusin", showControls);
-      player.addEventListener("mouseleave", () => player.classList.remove("is-active"));
-
-      window.addEventListener("message", (event) => {
-        if (event.origin !== "https://www.youtube.com") return;
-        let data;
-        try { data = JSON.parse(event.data); } catch { return; }
-        const state = data.event === "onStateChange" ? data.info : data.info && data.info.playerState;
-        if (state === 1) setPlaying(true);
-        if (state === 2) setPlaying(false);
-      });
-
-      featuredVideo.addEventListener("load", () => {
-        featuredVideo.contentWindow.postMessage(
-          JSON.stringify({ event: "listening", id: 1, channel: "widget" }),
-          "https://www.youtube.com"
-        );
-        controlFeaturedVideo("mute");
-        window.setTimeout(() => controlFeaturedVideo("playVideo"), 250);
       });
 
       featuredVideo.src = `https://www.youtube.com/embed/${featuredVideo.dataset.videoId}?${videoParameters}`;
