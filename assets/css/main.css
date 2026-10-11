@@ -5,6 +5,7 @@
   --sky: #d9f3ff;
   --paper: #fffdf6;
   --accent: #0a4f82;
+  --games-bg: #c5e4d9;
 }
 
 * {
@@ -142,7 +143,7 @@ a {
   left: -5%;
   height: 140px;
   border-radius: 50% 50% 0 0 / 45% 45% 0 0;
-  background: var(--paper);
+  background: var(--games-bg);
   content: "";
 }
 
@@ -258,13 +259,14 @@ a {
 }
 
 .games-section {
-  max-width: 1244px;
-  margin: 0 auto;
+  max-width: none;
   padding: 34px 32px 68px;
+  background: var(--games-bg);
 }
 
 .games-section__header {
-  margin-bottom: 24px;
+  max-width: 1180px;
+  margin: 0 auto 24px;
 }
 
 .games-section__header h2 {
@@ -292,6 +294,8 @@ a {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   align-items: stretch;
   gap: 18px;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 .game-card {
@@ -419,7 +423,7 @@ a {
 
 .about-section {
   padding: 48px 24px;
-  background: #c5f1ff;
+  background: linear-gradient(115deg, #86dfd2 0%, #a9b8ff 52%, #ffc58a 100%);
   color: #234863;
   text-align: center;
 }
@@ -461,7 +465,7 @@ a {
 
 .follow-section {
   padding: 42px 32px 48px;
-  background: #f6f0e3;
+  background: linear-gradient(115deg, #ffd7ad 0%, #ffeaa8 50%, #bfe3ff 100%);
   color: #234863;
 }
 
